@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+projectname="$1"
+if [ "$projectname" = "" ]; then
+read -p "Enter New Elm Project Name: " projectname
+fi
+echo "Creating Elm Project: $projectname"
+curl -LO "https://github.com/klsmith/elm-project-template/archive/master.zip"
+unzip master.zip
+rm master.zip
+mv elm-project-template-master $projectname
+echo "Enter password for klsmith:"
+curl -u klsmith https://api.github.com/user/repos -d "{\"name\":\"$projectname\"}"
+cd $projectname
+git init
+git add .
+git commit -m "Adding $projectname to version control."
+git remote add origin git@github.com:klsmith/${projectname}.git
+git push -u origin master
+mkdir gh-pages
+cd gh-pages
+git init
+git remote add origin git@github.com:klsmith/${projectname}.git
+git checkout -b gh-pages
+elm make ../src/Main.elm --output=index.html
+git add index.html
+git commit -m "Adding $projectname to gh-pages"
+git push --set-upstream origin gh-pages

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# Author: Kooper Smith
+#
+# Purpose:
+#     Create a basic Maven project
+#       (in Windows)
+#
+# Arguments:
+#     <None>
+#
+
+mvnproject.bat
