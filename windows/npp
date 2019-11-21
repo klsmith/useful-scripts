@@ -13,12 +13,3 @@
 
 # The "&" prevents it from locking the terminal
 npp.bat $1 &
-
-# check to see if NPP_DIR is set
-#if [ -n ${NPP_DIR+x} ];
-#then #if not, then use a default
-#	NPP_DIR="/C/Program Files (x86)/Notepad++/"; 
-#fi
-
-# The & makes it run detached from the terminal.
-#"$NPP_DIR/notepad++.exe" $1 &

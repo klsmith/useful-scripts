@@ -11,11 +11,11 @@
 ::     <None>
 ::
 
-SET ARCETYPE_GROUP_ID="pl.org.miki"
-SET ARCETYPE_ARTIFACT_ID="java8-quickstart-archetype"
-SET ARCETYPE_VERSION="1.0.0"
+SET GROUP_ID="pl.org.miki"
+SET ARTIFACT_ID="java8-quickstart-archetype"
+SET VERSION="1.0.0"
 
 mvn archetype:generate ^
- -DarchetypeGroupId=%ARCETYPE_GROUP_ID%^
- -DarchetypeArtifactId=%ARCETYPE_ARTIFACT_ID% ^
- -DarchetypeVersion=%ARCETYPE_VERSION% ^
+ -DarchetypeGroupId=%GROUP_ID%^
+ -DarchetypeArtifactId=%ARTIFACT_ID% ^
+ -DarchetypeVersion=%VERSION% ^
